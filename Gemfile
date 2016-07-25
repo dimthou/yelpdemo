@@ -50,3 +50,4 @@ gem 'pg', group: :production
 gem 'carrierwave'
 gem 'carrierwave-dropbox'
 gem 'figaro'
+gem "mini_magick"
