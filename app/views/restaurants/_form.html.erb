@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<!--
   <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name, class: "form-control" %>
@@ -31,7 +32,97 @@
     <%= f.label :image %><br>
     <%= f.file_field :image, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
+-->
+
+
+
+
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class:"form-control" %>
+    </div>
+    <div class="col-md-3 form-group">
+      <%= f.label :kanji %><br>
+      <%= f.text_field :kanji, class:"form-control" %>
+    </div>
+    <div class="col-md-3 field">
+      <%= f.label :sex %><br>
+      <%= f.select :sex, ['M', 'F'], {}, class:"selectpicker" %>
+    </div>
+    
   </div>
+  <div class="row">
+    
+    <div class="col-md-3 form-group">
+      <%= f.label :phone %><br>
+      <%= f.text_field :phone, class:"form-control" %>
+    </div>
+    <div class="col-md-3 form-group">
+      <%= f.label :website %><br>
+      <%= f.text_field :website, class:"form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <%= f.label :introductor %><br>
+      <%= f.text_field :introductor, class:"form-control" %>
+    </div>
+    <div class="col-md-4 form-group">
+      <%= f.label :company %><br>
+      <%= f.select :company, ['Standing Order', 'None Standing Order'], {}, class:"selectpicker" %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <%= f.label :account_name %><br>
+      <%= f.text_field :account_name, class:"form-control" %>
+    </div>
+    
+    <div class="col-md-8 field">
+      <%= f.label :created_date %><br>  
+      <%= f.date_select :created_date, 
+      {:order => [:day, :month, :year], :start_year => 1920, :end_year => 2020},
+      :class => "selectpicker" %>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <%= f.label :account_number %><br>
+      <%= f.text_field :account_number, class:"form-control" %>
+    </div>
+    <div class="col-md-3 form-group">
+      <%= f.label :support %><br>
+      <%= f.select :support, ['Standing Order', 'None Standing Order'], {}, class:"selectpicker" %>
+    </div>
+    <div class="col-md-2 form-group">
+      <%= f.label :service %><br>
+      <%= f.select :service, ['I-Banking', 'Fixed Deposite', 'Credit Card', 'ACLEDA Unity', 'ACLEDA ATM'], {}, class:"selectpicker" %>
+    </div>
+  </div>
+  <hr>
+  <div class="form-group">
+    <%= f.label :address %><br>
+    <%= f.text_field :address, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :remark %><br>
+    <%= f.text_field :remark, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class:"form-control" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit 'New Customer', class: "btn btn-primary" %>
+  </div>
+
+  <script type="text/javascript">
+    $('.selectpicker').selectpicker({
+      });
+  </script>
+  
 <% end %>

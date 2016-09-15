@@ -1,5 +1,6 @@
 <!--<p id="notice"><%= notice %></p> -->
 <%= image_tag @restaurant.image_url %>
+<!--
 <p>
   <strong>Name:</strong>
   <%= @restaurant.name %>
@@ -18,6 +19,80 @@
 <p>
   <strong>Website:</strong>
   <%= link_to @restaurant.website, @restaurant.website, class: "btn btn-link" %>
+</p>
+-->
+<br>
+<br>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Kanji:</strong>
+  <%= @restaurant.kanji %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @restaurant.sex %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @restaurant.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @restaurant.website %>
+</p>
+
+
+<p>
+  <strong>Introductor:</strong>
+  <%= @restaurant.introductor %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @restaurant.company %>
+</p>
+
+<p>
+  <strong>Account name:</strong>
+  <%= @restaurant.account_name %>
+</p>
+
+<p>
+  <strong>Account number:</strong>
+  <%= @restaurant.account_number %>
+</p>
+
+<p>
+  <strong>Created date:</strong>
+  <%= @restaurant.created_date %>
+</p>
+
+<p>
+  <strong>Support:</strong>
+  <%= @restaurant.support %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @restaurant.service %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @restaurant.remark %>
 </p>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |

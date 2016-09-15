@@ -1,4 +1,4 @@
-# encoding: utf-8
+# encoding: utf-8 
 
 class ImageUploader < CarrierWave::Uploader::Base
 
@@ -29,7 +29,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :resize_to_fit => [500, 800]
+  process :resize_to_fit => [200, 300]
   #
   # def scale(width, height)
   #   # do something
