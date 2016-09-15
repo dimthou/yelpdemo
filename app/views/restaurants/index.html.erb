@@ -64,7 +64,7 @@
         <td><%= restaurant.company %></td>
         <td><%= restaurant.account_name %></td>
         <td><%= restaurant.account_number %></td>
-        <td><%= restaurant.created_date %></td>
+        <td><%= restaurant.created_date.strftime('%v') %></td>
         <td><%= restaurant.support %></td>
         <td><%= restaurant.service %></td>
         <td><%= restaurant.address %></td>
@@ -74,8 +74,7 @@
         </td>
         </td><td><%= link_to restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-link" do %>
           <span class="glyphicon glyphicon-trash"></span>
-          <% end %>
-           
+          <% end %>           
         </td>
 
       </tr>

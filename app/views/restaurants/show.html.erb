@@ -23,86 +23,86 @@
 -->
 <div class="row">
   <div class="col-md-3">
+    <div class="col-md-12 col-sm-3">
     <%= image_tag @restaurant.image_url, class: "img-responsive img-thumbnail" %>
-    <br>
-    <br>
-
-    <p>
-      <strong>Name:</strong>
-      <%= @restaurant.name %>
-    </p>
-
-    <p>
-      <strong>Kanji:</strong>
-      <%= @restaurant.kanji %>
-    </p>
-
-    <p>
-      <strong>Sex:</strong>
-      <%= @restaurant.sex %>
-    </p>
-
-    <p>
-      <strong>Tel:</strong>
-      <%= @restaurant.phone %>
-    </p>
-
-    <p>
-      <strong>Email:</strong>
-      <%= @restaurant.website %>
-    </p>
-
-
-    <p>
-      <strong>Introductor:</strong>
-      <%= @restaurant.introductor %>
-    </p>
-
-    <p>
-      <strong>Company:</strong>
-      <%= @restaurant.company %>
-    </p>
-
-    <p>
-      <strong>Account name:</strong>
-      <%= @restaurant.account_name %>
-    </p>
-
-    <p>
-      <strong>Account number:</strong>
-      <%= @restaurant.account_number %>
-    </p>
-
-    <p>
-      <strong>Created date:</strong>
-      <%= @restaurant.created_date %>
-    </p>
-
-    <p>
-      <strong>Support:</strong>
-      <%= @restaurant.support %>
-    </p>
-
-    <p>
-      <strong>Service:</strong>
-      <%= @restaurant.service %>
-    </p>
-
-    <p>
-      <strong>Address:</strong>
-      <%= @restaurant.address %>
-    </p>
-
-    <p>
-      <strong>Remark:</strong>
-      <%= @restaurant.remark %>
-    </p>
-
+    <br><br>
+    </div>
     
+    <div class="col-md-12 col-sm-9">  
+      <p>
+        <strong>Name:</strong>
+        <%= @restaurant.name %>
+      </p>
 
-    <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
-    <%= link_to 'Back', restaurants_path, class: "btn btn-link" %>
+      <p>
+        <strong>Kanji:</strong>
+        <%= @restaurant.kanji %>
+      </p>
 
+      <p>
+        <strong>Sex:</strong>
+        <%= @restaurant.sex %>
+      </p>
+
+      <p>
+        <strong>Tel:</strong>
+        <%= @restaurant.phone %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= @restaurant.website %>
+      </p>
+
+
+      <p>
+        <strong>Introductor:</strong>
+        <%= @restaurant.introductor %>
+      </p>
+
+      <p>
+        <strong>Company:</strong>
+        <%= @restaurant.company %>
+      </p>
+
+      <p>
+        <strong>Account name:</strong>
+        <%= @restaurant.account_name %>
+      </p>
+
+      <p>
+        <strong>Account number:</strong>
+        <%= @restaurant.account_number %>
+      </p>
+
+      <p>
+        <strong>Created date:</strong>
+        <%= @restaurant.created_date.strftime('%v') %>
+      </p>
+
+      <p>
+        <strong>Support:</strong>
+        <%= @restaurant.support %>
+      </p>
+
+      <p>
+        <strong>Service:</strong>
+        <%= @restaurant.service %>
+      </p>
+
+      <p>
+        <strong>Address:</strong>
+        <%= @restaurant.address %>
+      </p>
+
+      <p>
+        <strong>Remark:</strong>
+        <%= @restaurant.remark %>
+      </p>
+
+      <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
+      <%= link_to 'Back', restaurants_path, class: "btn btn-link" %>
+    </div> 
   </div>
   <div class="col-md-9">
     <% if @reviews.blank? %>
@@ -110,10 +110,36 @@
       <h3>No record</h3>
     <% else %>
       <%= link_to "Write a notice", new_restaurant_review_path(@restaurant), class: "btn-link" %>
-      <% @reviews.each do |review| %>
-        <p><%= review.rating %></p>
-        <p><%= review.comment %></p>
-      <% end %>
+      
+      <br>
+      <br>
+        <table class="table table-hover table-condensed"">  
+          <thead>
+            <tr>
+              <th>Nº</th>
+              <th>Date</th>
+              <th>Problem</th>
+              <th>Solved</th>
+              <th>Comment</th>             
+            </tr>
+          </thead>
+
+          <tbody>   
+            <% @reviews.each_with_index do |review, i| %>
+             <!--   <p><%= review.created_at %></p>
+                <p><%= review.problem %></p>
+                <p><%= review.solved %></p>
+                <p><%= review.comment %></p> -->
+              <tr>
+                <td><%= i + 1 %></td>
+                <td><%= review.created_at.strftime('%v') %></td>
+                <td><%= review.problem %></td>
+                <td><%= review.solved %></td>
+                <td><%= review.comment %></td>                             
+              </tr>
+            <% end %>
+          </tbody>
+        </table>    
     <% end %>
   </div>
 </div>

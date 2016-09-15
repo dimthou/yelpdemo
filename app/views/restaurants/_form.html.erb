@@ -38,15 +38,15 @@
 
 
   <div class="row">
-    <div class="col-md-3 form-group">
+    <div class="col-md-3 col-sm-3 form-group">
       <%= f.label :name %><br>
       <%= f.text_field :name, class:"form-control" %>
     </div>
-    <div class="col-md-3 form-group">
+    <div class="col-md-3 col-sm-3 form-group">
       <%= f.label :kanji %><br>
       <%= f.text_field :kanji, class:"form-control" %>
     </div>
-    <div class="col-md-3 field">
+    <div class="col-md-3 col-sm-3 field">
       <%= f.label :sex %><br>
       <%= f.select :sex, ['M', 'F'], {}, class:"selectpicker" %>
     </div>
@@ -54,50 +54,51 @@
   </div>
   <div class="row">
     
-    <div class="col-md-3 form-group">
+    <div class="col-md-3 col-sm-3 form-group">
       <%= f.label :phone %><br>
       <%= f.text_field :phone, class:"form-control" %>
     </div>
-    <div class="col-md-3 form-group">
+    <div class="col-md-3 col-sm-3 form-group">
       <%= f.label :website %><br>
       <%= f.text_field :website, class:"form-control" %>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-3 form-group">
+    <div class="col-md-3 col-sm-3 form-group">
       <%= f.label :introductor %><br>
       <%= f.text_field :introductor, class:"form-control" %>
     </div>
-    <div class="col-md-4 form-group">
+    <div class="col-md-4 col-sm-4 form-group">
       <%= f.label :company %><br>
       <%= f.select :company, ['Standing Order', 'None Standing Order'], {}, class:"selectpicker" %>
     </div>
   </div>
   <hr>
   <div class="row">
-    <div class="col-md-3 form-group">
+    <div class="col-md-3 col-sm-3 form-group">
       <%= f.label :account_name %><br>
       <%= f.text_field :account_name, class:"form-control" %>
     </div>
     
-    <div class="col-md-8 field">
+    <div class="col-md-8 col-sm-8 field">
       <%= f.label :created_date %><br>  
       <%= f.date_select :created_date, 
       {:order => [:day, :month, :year], :start_year => 1920, :end_year => 2020},
       :class => "selectpicker" %>
     </div>
   </div>  
+  
   <div class="row">
-    <div class="col-md-3 form-group">
+    <div class="col-md-3 col-sm-3 form-group">
       <%= f.label :account_number %><br>
       <%= f.text_field :account_number, class:"form-control" %>
     </div>
-    <div class="col-md-3 form-group">
+    <div class="col-md-3 col-sm-3 form-group">
       <%= f.label :support %><br>
       <%= f.select :support, ['Standing Order', 'None Standing Order'], {}, class:"selectpicker" %>
     </div>
-    <div class="col-md-2 form-group">
+    <div class="col-md-2 col-sm-2 form-group">
       <%= f.label :service %><br>
       <%= f.select :service, ['I-Banking', 'Fixed Deposite', 'Credit Card', 'ACLEDA Unity', 'ACLEDA ATM'], {}, class:"selectpicker" %>
     </div>
